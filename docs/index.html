@@ -45,7 +45,7 @@
 
     <section id="about" class="p-10 bg-gray-900">
       <div
-        class="container mx-auto max-w-4xl bg-gray-800 p-8 rounded-lg shadow-md"
+        class="container mx-auto max-w-6xl bg-gray-800 p-8 rounded-lg shadow-md"
       >
         <div class="flex flex-col md:flex-row items-center">
           <!-- Image Section -->
@@ -60,7 +60,7 @@
           <!-- About Text Section -->
           <div class="md:w-2/3 md:ml-6">
             <h2 class="text-4xl font-bold text-blue-500 mb-4">About Me</h2>
-            <p class="text-lg leading-relaxed">
+            <p class="text-lg leading-relaxed text-justify">
               Hi! I’m <span class="font-semibold">Adrian Kim D. Requillo</span>,
               a full-stack developer from Davao City specializing in efficient,
               user-centered web applications. With expertise in both frontend
@@ -69,37 +69,78 @@
               solid coding practices, enabling seamless digital experiences.
             </p>
 
+            <!-- Skills & Technologies Section -->
             <div class="mt-6">
               <h3 class="text-2xl font-bold">Skills & Technologies</h3>
-              <ul class="list-disc list-inside mt-2">
-                <li>
-                  <i class="fas fa-code"></i> <strong>Frontend:</strong> HTML,
-                  CSS, JavaScript, React, Inertia.js, EJS
+              <ul class="list-disc list-inside mt-2 space-y-2 text-justify">
+                <li class="flex items-start">
+                  <i class="fas fa-code w-5 mr-2"></i>
+                  <div class="flex">
+                    <span>HTML, CSS, JavaScript, React, Inertia.js, EJS</span>
+                  </div>
                 </li>
-                <li>
-                  <i class="fas fa-server"></i>
-                  <strong>Backend:</strong> Laravel, Node.js, Express.js, PHP
+                <li class="flex items-start">
+                  <i class="fas fa-server w-5 mr-2"></i>
+                  <div class="flex">
+                    <span>Laravel, Node.js, Express.js, PHP</span>
+                  </div>
                 </li>
-                <li>
-                  <i class="fas fa-mobile-alt"></i>
-                  <strong>Mobile & Web Development:</strong> Flutter
+                <li class="flex items-start">
+                  <i class="fas fa-mobile-alt w-5 mr-2"></i>
+                  <div class="flex">
+                    <span>Flutter</span>
+                  </div>
                 </li>
-                <li>
-                  <i class="fas fa-laptop-code"></i>
-                  <strong>Languages:</strong> JavaScript, C#
+                <li class="flex items-start">
+                  <i class="fas fa-laptop-code w-5 mr-2"></i>
+                  <div class="flex">
+                    <span>JavaScript, C#</span>
+                  </div>
                 </li>
-                <li>
-                  <i class="fas fa-database"></i>
-                  <strong>Databases:</strong> MySQL, Firebase, MS SQL
+                <li class="flex items-start">
+                  <i class="fas fa-database w-5 mr-2"></i>
+                  <div class="flex">
+                    <span>MySQL, Firebase, MS SQL</span>
+                  </div>
                 </li>
-                <li>
-                  <i class="fas fa-tools"></i>
-                  <strong>Tools & Platforms:</strong> IIS, Active Directory,
-                  RESTful APIs, Git, GitHub
+                <li class="flex items-start">
+                  <i class="fas fa-tools w-5 mr-2"></i>
+                  <div class="flex">
+                    <span
+                      >IIS, Active Directory, RESTful APIs, Git, GitHub</span
+                    >
+                  </div>
                 </li>
               </ul>
             </div>
 
+            <!-- Education Section -->
+            <div class="mt-8">
+              <h3 class="text-2xl font-bold">Education</h3>
+              <ul class="list-disc list-inside mt-2 space-y-2 text-justify">
+                <li>
+                  <strong>Ateneo de Davao University</strong> - Bachelor’s in
+                  Information and Management Technology
+                </li>
+                <li>
+                  <strong>Ateneo de Davao University</strong> - Master’s in
+                  Information Technology
+                </li>
+              </ul>
+            </div>
+
+            <!-- Experience Section -->
+            <div class="mt-8">
+              <h3 class="text-2xl font-bold">Experience</h3>
+              <ul class="list-disc list-inside mt-2 space-y-2 text-justify">
+                <li>
+                  <strong>Ateneo de Davao University</strong> -
+                  Full-Stack Software Developer
+                </li>
+              </ul>
+            </div>
+
+            <!-- View Projects Button -->
             <a
               href="#projects"
               class="mt-6 inline-block bg-blue-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-blue-700 transition"
@@ -123,7 +164,7 @@
           <img
             src="UniversitySeal240px.png"
             alt="Rise System"
-            class="w-full md:w-1/3 mb-4 md:mb-0 md:mr-5 rounded-md"
+            class="w-[150px] h-auto mb-4 md:mb-0 md:mr-5 rounded-md"
           />
           <div>
             <h3 class="text-xl font-bold mb-2 text-white">Rise System</h3>
@@ -165,7 +206,7 @@
           <img
             src="UniversitySeal240px.png"
             alt="Law System"
-            class="w-full md:w-1/3 mb-4 md:mb-0 md:mr-5 rounded-md"
+            class="w-[80%] md:w-[64%] mb-4 md:mb-0 md:mr-5 rounded-md"
           />
           <div>
             <h3 class="text-xl font-bold mb-2 text-white">Law System</h3>
@@ -200,7 +241,7 @@
           <img
             src="UniversitySeal240px.png"
             alt="Enrollment System"
-            class="w-full md:w-1/3 mb-4 md:mb-0 md:mr-5 rounded-md"
+            class="w-[80%] md:w-[64%] mb-4 md:mb-0 md:mr-5 rounded-md"
           />
           <div>
             <h3 class="text-xl font-bold mb-2 text-white">Enrollment System</h3>
@@ -238,7 +279,7 @@
           <img
             src="UniversitySeal240px.png"
             alt="Beadle System"
-            class="w-full md:w-1/3 mb-4 md:mb-0 md:mr-5 rounded-md"
+            class="w-[80%] md:w-[64%] mb-4 md:mb-0 md:mr-5 rounded-md"
           />
           <div>
             <h3 class="text-xl font-bold mb-2 text-white">Beadle System</h3>
@@ -275,7 +316,7 @@
           <img
             src="UniversitySeal240px.png"
             alt="OnePass System"
-            class="w-full md:w-1/3 mb-4 md:mb-0 md:mr-5 rounded-md"
+            class="w-[80%] md:w-[64%] mb-4 md:mb-0 md:mr-5 rounded-md"
           />
           <div>
             <h3 class="text-xl font-bold mb-2 text-white">OnePass System</h3>
@@ -313,7 +354,7 @@
           <img
             src="UniversitySeal240px.png"
             alt="Payment System"
-            class="w-full md:w-1/3 mb-4 md:mb-0 md:mr-5 rounded-md"
+            class="w-[80%] md:w-[64%] mb-4 md:mb-0 md:mr-5 rounded-md"
           />
           <div>
             <h3 class="text-xl font-bold mb-2 text-white">Payment System</h3>
@@ -350,7 +391,7 @@
           <img
             src="UniversitySeal240px.png"
             alt="Career System"
-            class="w-full md:w-1/3 mb-4 md:mb-0 md:mr-5 rounded-md"
+            class="w-[80%] md:w-[64%] mb-4 md:mb-0 md:mr-5 rounded-md"
           />
           <div>
             <h3 class="text-xl font-bold mb-2 text-white">Career System</h3>
@@ -384,7 +425,7 @@
           <img
             src="UniversitySeal240px.png"
             alt="Booking System"
-            class="w-full md:w-1/3 mb-4 md:mb-0 md:mr-5 rounded-md"
+            class="w-[80%] md:w-[64%] mb-4 md:mb-0 md:mr-5 rounded-md"
           />
           <div>
             <h3 class="text-xl font-bold mb-2 text-white">Booking System</h3>
@@ -422,7 +463,7 @@
           <img
             src="UniversitySeal240px.png"
             alt="Office Management System"
-            class="w-full md:w-1/3 mb-4 md:mb-0 md:mr-5 rounded-md"
+            class="w-[80%] md:w-[64%] mb-4 md:mb-0 md:mr-5 rounded-md"
           />
           <div>
             <h3 class="text-xl font-bold mb-2 text-white">
