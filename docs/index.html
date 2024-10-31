@@ -106,8 +106,18 @@
             </h3>
           </div>
           <p class="mb-3">
-            Developed a human development and training program that enhances
+            A comprehensive development and training program designed to enhance
             employee skills and performance.
+            <span id="description1" class="hidden"
+              >Features include automated email notifications and a dashboard
+              for tracking seminar attendance and progress.</span
+            >
+            <a
+              href="#"
+              class="text-blue-400 hover:underline"
+              onclick="toggleDescription('description1', this); return false;"
+              >Read More</a
+            >
           </p>
         </div>
 
@@ -129,9 +139,17 @@
             </h3>
           </div>
           <p class="mb-3">
-            Created a comprehensive system for ranking, academic record
-            tracking, student evaluation for professors, grade viewing, and
-            enrollment.
+            A specialized system for law students and administratives that
+            streamlines hiring processes and academic record management.
+            <span id="description2" class="hidden"
+              >Facilitates efficient task management within law offices.</span
+            >
+            <a
+              href="#"
+              class="text-blue-400 hover:underline"
+              onclick="toggleDescription('description2', this); return false;"
+              >Read More</a
+            >
           </p>
         </div>
 
@@ -153,8 +171,17 @@
             </h3>
           </div>
           <p class="mb-3">
-            Developed a fully automated enrollment system with quality control
-            management to enhance the enrollment process.
+            An automated enrollment system designed to enhance efficiency and
+            user experience.
+            <span id="description3" class="hidden"
+              >Optimizes the enrollment workflow for students and staff.</span
+            >
+            <a
+              href="#"
+              class="text-blue-400 hover:underline"
+              onclick="toggleDescription('description3', this); return false;"
+              >Read More</a
+            >
           </p>
         </div>
 
@@ -176,8 +203,16 @@
             </h3>
           </div>
           <p class="mb-3">
-            Implemented an attendance tracking system for students, organized by
-            school year and semester.
+            An attendance tracking system for students.
+            <span id="description4" class="hidden"
+              >Organizes attendance by school year and semester.</span
+            >
+            <a
+              href="#"
+              class="text-blue-400 hover:underline"
+              onclick="toggleDescription('description4', this); return false;"
+              >Read More</a
+            >
           </p>
         </div>
 
@@ -199,8 +234,19 @@
             </h3>
           </div>
           <p class="mb-3">
-            Developed an LDAP system for Active Directory account creation and
-            management, ensuring efficient user management.
+            The OnePass System manages Active Directory LDAP accounts, including
+            new, existing, and inactive accounts, to streamline and maintain
+            user accounts at the university.
+            <span id="description5" class="hidden">
+              Enhances operational efficiency and data accuracy.
+            </span>
+            <a
+              href="#"
+              class="text-blue-400 hover:underline"
+              onclick="toggleDescription('description5', this); return false;"
+            >
+              Read More
+            </a>
           </p>
         </div>
 
@@ -222,8 +268,17 @@
             </h3>
           </div>
           <p class="mb-3">
-            Created an online banking payment system for Ateneo de Davao
-            University to facilitate secure transactions.
+            An online banking payment system developed to facilitate secure
+            transactions for Ateneo de Davao University.
+            <span id="description6" class="hidden"
+              >Ensures reliability in financial operations.</span
+            >
+            <a
+              href="#"
+              class="text-blue-400 hover:underline"
+              onclick="toggleDescription('description6', this); return false;"
+              >Read More</a
+            >
           </p>
         </div>
 
@@ -245,8 +300,18 @@
             </h3>
           </div>
           <p class="mb-3">
-            Developed a hiring system for Ateneo de Davao University with
-            automated event scheduling and accurate tracking.
+            A hiring system designed to streamline the recruitment process and
+            improve overall efficiency.
+            <span id="description7" class="hidden"
+              >Tracks submitted documents and schedules interviews
+              effectively.</span
+            >
+            <a
+              href="#"
+              class="text-blue-400 hover:underline"
+              onclick="toggleDescription('description7', this); return false;"
+              >Read More</a
+            >
           </p>
         </div>
 
@@ -268,8 +333,17 @@
             </h3>
           </div>
           <p class="mb-3">
-            Created a booking system for university facilities, allowing
-            students to easily reserve spaces.
+            A booking system that facilitates reservations for university
+            facilities for students and staff.
+            <span id="description8" class="hidden"
+              >Accommodates users across multiple campuses.</span
+            >
+            <a
+              href="#"
+              class="text-blue-400 hover:underline"
+              onclick="toggleDescription('description8', this); return false;"
+              >Read More</a
+            >
           </p>
         </div>
 
@@ -291,25 +365,39 @@
             </h3>
           </div>
           <p class="mb-3">
-            Developed a system that makes office transactions paperless and
-            efficient by utilizing automation and providing accurate data
-            reports and analytics.
+            The Office Management System facilitates the transition of daily
+            tasks from paper-based processes to paperless transactions, ensuring
+            efficient record-keeping and improved operations across various
+            offices.
+            <span id="description9" class="hidden">
+              Enhances communication and task efficiency.
+            </span>
+            <a
+              href="#"
+              class="text-blue-400 hover:underline"
+              onclick="toggleDescription('description9', this); return false;"
+            >
+              Read More
+            </a>
           </p>
         </div>
       </div>
-
-      <div class="text-center mt-5">
-        <p>
-          Check out my
-          <a
-            href="https://github.com/strawpple"
-            class="text-blue-400 hover:underline"
-            >GitHub</a
-          >
-          for more projects.
-        </p>
-      </div>
     </section>
+
+    <script>
+      function toggleDescription(descriptionId, link) {
+        const description = document.getElementById(descriptionId);
+        const isVisible = !description.classList.contains("hidden");
+
+        if (isVisible) {
+          description.classList.add("hidden");
+          link.textContent = "Read More";
+        } else {
+          description.classList.remove("hidden");
+          link.textContent = "Read Less";
+        }
+      }
+    </script>
 
     <section id="contact" class="p-10 bg-gray-900">
       <h2 class="text-3xl font-bold text-center mb-8">Contact Me</h2>
