@@ -550,12 +550,12 @@
 
   <script>
     document.getElementById("experience-link").addEventListener("click", function (event) {
-      event.preventDefault(); // Prevent default link behavior
+      event.preventDefault(); 
   
       const passkey = prompt("Enter the passkey:");
       
       if (passkey === "072689") {
-        window.location.href = "/valentines_ask"; // Redirect to the new page
+        window.location.href = "valentines.html";
       } else {
         alert("Incorrect passkey. Please try again.");
       }
