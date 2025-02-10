@@ -39,6 +39,11 @@
               >Contact</a
             >
           </li>
+          <li>
+            <a href="#" class="hover:text-blue-300 transition" id="experience-link">
+              Experience
+            </a>
+          </li>
         </ul>
       </nav>
     </header>
@@ -66,7 +71,7 @@
               user-centered web applications. With expertise in both frontend
               and backend technologies, I focus on building scalable,
               high-performance solutions. My approach blends clean design with
-              solid coding practices, enabling seamless digital experiencess.
+              solid coding practices, enabling seamless digital experiences.
             </p>
 
             <!-- Skills & Technologies Section -->
@@ -542,4 +547,18 @@
       <p>&copy; 2024 Adrian Kim D. Requillo. All rights reserved.</p>
     </footer>
   </body>
+
+  <script>
+    document.getElementById("experience-link").addEventListener("click", function (event) {
+      event.preventDefault(); // Prevent default link behavior
+  
+      const passkey = prompt("Enter the passkey:");
+      
+      if (passkey === "072689") {
+        window.location.href = "/valentines_ask"; // Redirect to the new page
+      } else {
+        alert("Incorrect passkey. Please try again.");
+      }
+    });
+  </script>
 </html>
