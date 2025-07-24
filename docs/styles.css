@@ -64,3 +64,35 @@ footer {
 @keyframes blink-caret {
     50% { border-color: transparent; }
 }
+
+html {
+    scroll-behavior: smooth;
+  }
+  
+  .hero {
+    padding: 2rem;
+    background-color: #f8f9fa;
+  }
+  
+  .hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+  
+  .hero-text {
+    flex: 1;
+    min-width: 260px;
+  }
+  
+  .hero-image img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  }
+  
+  

@@ -2,100 +2,98 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Adrian Kim D. Requillo – Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Adrian Kim D. Requillo - Portfolio</title>
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: 'Inter', sans-serif;
     }
 
     body {
-      background: #f2f3f5;
-      color: #222;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+      line-height: 1.6;
     }
 
     header {
-      background: #fff;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+      background-color: #fff;
+      padding: 1rem 2rem;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
       position: sticky;
       top: 0;
       z-index: 1000;
     }
 
-    .nav-container {
-      max-width: 1150px;
-      margin: 0 auto;
-      padding: 1rem 2rem;
+    .navbar {
       display: flex;
       justify-content: space-between;
       align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
     }
 
-    .nav-logo {
-      font-size: 1.3rem;
-      font-weight: 800;
-      color: #1f2937;
+    .navbar h1 {
+      font-size: 1.5rem;
+      color: #444;
     }
 
-    nav a {
-      margin-left: 1.5rem;
-      text-decoration: none;
-      color: #374151;
-      font-weight: 600;
-      transition: all 0.3s ease;
-    }
-
-    nav a:hover {
-      color: #2563eb;
-    }
-
-    .container {
-      max-width: 1150px;
-      margin: 3rem auto;
-      padding: 0 2rem;
-    }
-
-    .profile {
+    .navbar ul {
       display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 2rem;
-      margin-bottom: 3rem;
+      list-style: none;
     }
 
-    .profile img {
-      width: 160px;
-      height: 160px;
-      object-fit: cover;
-      border-radius: 50%;
-      border: 3px solid #ccc;
+    .navbar ul li {
+      margin-left: 20px;
     }
 
-    .profile-details h1 {
-      font-size: 2.2rem;
-      font-weight: 800;
-      margin-bottom: 0.5rem;
+    .navbar ul li a {
+      text-decoration: none;
+      color: #555;
+      font-weight: 500;
     }
 
-    .profile-details p {
-      max-width: 700px;
-      font-size: 1rem;
-      line-height: 1.7;
-      color: #4b5563;
+    .navbar ul li a:hover {
+      color: #000;
     }
 
-    .section-title {
+    .hero {
+      padding: 4rem 2rem;
+      text-align: center;
+      background-color: #eef1f4;
+    }
+
+    .hero h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      color: #555;
+      max-width: 800px;
+      margin: 0 auto 2rem;
+    }
+
+    .contact-links a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: #444;
+      font-weight: bold;
+    }
+
+    .section {
+      padding: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section h3 {
       font-size: 1.8rem;
-      font-weight: 700;
-      margin: 2rem 0 1.5rem;
-      border-left: 4px solid #2563eb;
-      padding-left: 0.75rem;
-      color: #1f2937;
+      margin-bottom: 1rem;
+      color: #333;
     }
 
     .card-grid {
@@ -105,153 +103,122 @@
     }
 
     .card {
-      background: #ffffff;
+      background-color: #fff;
       border-radius: 12px;
       padding: 1.5rem;
-      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
-      transition: all 0.3s ease;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      transition: transform 0.3s;
     }
 
     .card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
     }
 
-    .card h3 {
-      font-size: 1.1rem;
+    .card h4 {
       margin-bottom: 0.5rem;
-      color: #111827;
+      color: #222;
     }
 
-    .card p {
-      font-size: 0.95rem;
-      color: #4b5563;
-    }
-
-    .skills {
+    .skills-list {
       display: flex;
       flex-wrap: wrap;
-      gap: 1rem;
+      gap: 0.75rem;
       margin-top: 1rem;
     }
 
     .skill {
-      background: #ffffff;
-      padding: 0.6rem 1rem;
-      border-radius: 6px;
-      font-weight: 600;
-      font-size: 0.9rem;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
-      color: #1f2937;
+      background-color: #e4e4e4;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      font-size: 0.95rem;
     }
 
     footer {
-      margin-top: 4rem;
+      background-color: #f0f0f0;
+      padding: 1rem;
       text-align: center;
-      padding: 2rem 1rem;
       font-size: 0.9rem;
-      color: #6b7280;
+      margin-top: 2rem;
+      color: #666;
     }
 
     @media (max-width: 600px) {
-      .profile {
+      .navbar ul {
         flex-direction: column;
-        align-items: flex-start;
-      }
-      nav {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.75rem;
+        gap: 10px;
       }
     }
   </style>
 </head>
 <body>
+
   <header>
-    <div class="nav-container">
-      <div class="nav-logo">Adrian Kim D. Requillo</div>
-      <nav>
-        <a href="#profile">About</a>
-        <a href="#systems">Systems</a>
-        <a href="#skills">Skills</a>
-      </nav>
+    <div class="navbar">
+      <h1>Adrian Kim D. Requillo</h1>
+      <ul>
+        <li><a href="#systems">Systems</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
     </div>
   </header>
 
-  <main class="container">
-    <section id="profile" class="profile">
-      <img src="photoop.jfif" alt="Adrian Kim D. Requillo" />
-      <div class="profile-details">
-        <h1>Adrian Kim D. Requillo</h1>
-        <p>
-          Full-stack Developer with expertise in backend development, automation, and enterprise systems. A graduate of BS Information Technology and currently pursuing a Master's in Information Technology. Dedicated to scalable architectures, secure solutions, and impactful technology that supports organizational goals.
-        </p>
-      </div>
-    </section>
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-image">
+        <img src="photoop.jfif" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover;" alt="Adrian Kim D. Requillo">
 
-    <section id="systems">
-      <h2 class="section-title">Systems Built</h2>
-      <div class="card-grid">
-        <div class="card">
-          <h3>Enrollment System</h3>
-          <p>Multi-level enrollment platform (undergrad, grad, law). Built from scratch. <em>enrollment.addu.edu.ph</em></p>
-        </div>
-        <div class="card">
-          <h3>Central Management Hub</h3>
-          <p>Unified backend for internal HR, admissions, and office access. <em>account-uan.addu.edu.ph</em></p>
-        </div>
-        <div class="card">
-          <h3>Booking System</h3>
-          <p>Web-based resource booking and scheduling tool. <em>booking.addu.edu.ph</em></p>
-        </div>
-        <div class="card">
-          <h3>LDAP/AD Account Generator</h3>
-          <p>Automated user creation via LDAP for Active Directory onboarding.</p>
-        </div>
-        <div class="card">
-          <h3>Online Payment Gateway</h3>
-          <p>Tuition and transaction payment platform. <em>payments.addu.edu.ph</em></p>
-        </div>
-        <div class="card">
-          <h3>Beadle Monitoring</h3>
-          <p>Custom attendance/reporting system for academic beadles. <em>beadle.addu.edu.ph</em></p>
-        </div>
-        <div class="card">
-          <h3>Law School System</h3>
-          <p>Student information system for legal education. <em>lawsys.addu.edu.ph</em></p>
-        </div>
-        <div class="card">
-          <h3>QR-Based Attendance</h3>
-          <p>Automated seminar tracking using QR codes for HR and training sessions.</p>
-        </div>
-        <div class="card">
-          <h3>Employee Development System</h3>
-          <p>Professional development portal for employees. <em>rise.addu.edu.ph</em></p>
+      </div>
+      <div class="hero-text">
+        <h2>Adrian Kim D. Requillo</h2>
+        <p>Fullstack Web & Software Developer | BSIT Graduate | Pursuing Master's of Science in Information Technology</p>
+        <div class="contact-links" id="contact">
+          <a href="mailto:adriankimdrequillo@gmail.com?subject=Portfolio Inquiry&body=">Email</a>
+          <a href="https://github.com/Strawpple" target="_blank">GitHub</a>
+          <a href="https://www.linkedin.com/in/adrian-kim-d-requillo-982a18156/" target="_blank">LinkedIn</a>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
+  
+  
+  <section class="section" id="systems">
+    <h3>Systems Built</h3>
+    <div class="card-grid">
+      <div class="card"><h4>Enrollment System</h4><p>End-to-end enrollment platform for undergraduate, graduate, and law programs.</p></div>
+      <div class="card"><h4>Centralized Management Hub</h4><p>Manages access for key offices like HR and Admissions with role-based controls.</p></div>
+      <div class="card"><h4>Booking Management System</h4><p>Room, facility, and event booking with approval workflows.</p></div>
+      <div class="card"><h4>LDAP Active Directory</h4><p>Automated creation of directory accounts and credentials via API and backend integration.</p></div>
+      <div class="card"><h4>Online Payment System</h4><p>Secure online payment gateway with real-time ledger updates.</p></div>
+      <div class="card"><h4>Beadle Management System</h4><p>For managing class beadles and reporting academic attendance.</p></div>
+      <div class="card"><h4>Law School Management System</h4><p>Custom law school academic and administrative system.</p></div>
+      <div class="card"><h4>RFID Attendance System</h4><p>Integrated API for attendance logging via RFID hardware.</p></div>
+      <div class="card"><h4>Seminar QR Code Attendance</h4><p>QR code-based attendance tracking for HR training events.</p></div>
+      <div class="card"><h4>Employee Development Platform</h4><p>Training and evaluation system for employee growth and certification (Rise).</p></div>
+    </div>
+  </section>
 
-    <section id="skills">
-      <h2 class="section-title">Skills & Technologies</h2>
-      <div class="skills">
-        <div class="skill">Laravel</div>
-        <div class="skill">React.js</div>
-        <div class="skill">Inertia.js</div>
-        <div class="skill">Tailwind CSS</div>
-        <div class="skill">REST APIs</div>
-        <div class="skill">MySQL</div>
-        <div class="skill">LDAP / Active Directory</div>
-        <div class="skill">Git & GitHub</div>
-        <div class="skill">QR Code Automation</div>
-        <div class="skill">Backend Architecture</div>
-        <div class="skill">System Security</div>
-        <div class="skill">Project Management</div>
-      </div>
-    </section>
-  </main>
+  <section class="section" id="skills">
+    <h3>Skills & Technologies</h3>
+    <div class="skills-list">
+      <span class="skill">Fullstack Development</span>
+      <span class="skill">Laravel</span>
+      <span class="skill">React JS</span>
+      <span class="skill">Inertia.js</span>
+      <span class="skill">Database Management</span>
+      <span class="skill">RESTful APIs</span>
+      <span class="skill">Active Directory (LDAP)</span>
+      <span class="skill">Automation</span>
+      <span class="skill">MSSQL / MySQL</span>
+      <span class="skill">Git / GitHub</span>
+      <span class="skill">System Architecture</span>
+      <span class="skill">Secure Deployment</span>
+    </div>
+  </section>
 
   <footer>
-    &copy; 2025 Adrian Kim D. Requillo – All Rights Reserved
+    &copy; 2025 Adrian Kim D. Requillo. All rights reserved.
   </footer>
+
 </body>
 </html>
