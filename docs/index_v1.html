@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+
+    <title>My Portfolio</title>
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-800 text-gray-200">
+    <header class="bg-blue-700 text-white text-center py-5 fixed top-0 left-0 w-full z-50">
+      <h1 class="text-4xl font-bold">My Portfolio</h1>
+
+      <nav class="mt-4">
+        <ul class="flex justify-center space-x-8">
+          <li>
+            <a href="#about" class="hover:text-blue-300 transition">About</a>
+          </li>
+          <li>
+            <a href="#projects" class="hover:text-blue-300 transition"
+              >Projects</a
+            >
+          </li>
+          <li>
+            <a href="#contact" class="hover:text-blue-300 transition"
+              >Contact</a
+            >
+          </li>
+          <li>
+            <a href="#" class="hover:text-blue-300 transition" id="experience-link">
+              Experience
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <section id="about" class="p-10 bg-gray-900">
+      <div
+        class="container mx-auto max-w-6xl bg-gray-800 p-8 rounded-lg shadow-md"
+      >
+        <div class="flex flex-col md:flex-row items-center">
+          <!-- Image Section -->
+          <div class="md:w-1/3 mb-4 md:mb-0">
+            <img
+              src="photoop.jfif"
+              alt="Adrian Kim D. Requillo"
+              class="w-full h-auto rounded-full shadow-md"
+            />
+          </div>
+
+          <!-- About Text Section -->
+          <div class="md:w-2/3 md:ml-6">
+            <h2 class="text-4xl font-bold text-blue-500 mb-4">About Me</h2>
+            <p class="text-lg leading-relaxed text-justify">
+              Hi! I’m <span class="font-semibold">Adrian Kim D. Requillo</span>,
+              a full-stack developer from Davao City specializing in efficient,
+              user-centered web applications. With expertise in both frontend
+              and backend technologies, I focus on building scalable,
+              high-performance solutions. My approach blends clean design with
+              solid coding practices, enabling seamless digital experiences.
+            </p>
+
+            <!-- Skills & Technologies Section -->
+            <div class="mt-6">
+              <h3 class="text-2xl font-bold">Skills & Technologies</h3>
+              <ul class="list-disc list-inside mt-2 space-y-2 text-justify">
+                <li class="flex items-start">
+                  <i class="fas fa-code w-5 mr-2"></i>
+                  <div class="flex">
+                    <span>HTML, CSS, JavaScript, React, Inertia.js, EJS</span>
+                  </div>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-server w-5 mr-2"></i>
+                  <div class="flex">
+                    <span>Laravel, Node.js, Express.js, PHP</span>
+                  </div>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-mobile-alt w-5 mr-2"></i>
+                  <div class="flex">
+                    <span>Flutter</span>
+                  </div>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-laptop-code w-5 mr-2"></i>
+                  <div class="flex">
+                    <span>JavaScript, C#</span>
+                  </div>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-database w-5 mr-2"></i>
+                  <div class="flex">
+                    <span>MySQL, Firebase, MS SQL</span>
+                  </div>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-tools w-5 mr-2"></i>
+                  <div class="flex">
+                    <span
+                      >IIS, Active Directory, RESTful APIs, Git, GitHub</span
+                    >
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Education Section -->
+            <div class="mt-8">
+              <h3 class="text-2xl font-bold">Education</h3>
+              <ul class="list-disc list-inside mt-2 space-y-2 text-justify">
+                <li>
+                  <strong>Ateneo de Davao University</strong> - Bachelor of Science in
+                  Information Technology
+                </li>
+                <li>
+                  <strong>Ateneo de Davao University</strong> - Master of Science in
+                  Information Technology
+                </li>
+              </ul>
+            </div>
+
+            <!-- Experience Section -->
+            <div class="mt-8">
+              <h3 class="text-2xl font-bold">Experience</h3>
+              <ul class="list-disc list-inside mt-2 space-y-2 text-justify">
+                <li>
+                  <strong>Ateneo de Davao University</strong> -
+                  Full-Stack Software Developer
+                </li>
+              </ul>
+            </div>
+
+            <!-- View Projects Button -->
+            <a
+              href="#projects"
+              class="mt-6 inline-block bg-blue-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-blue-700 transition"
+              >View My Projects</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="p-10 bg-gray-900">
+      <h2 class="text-3xl font-bold text-center mb-8 text-white">
+        My Projects
+      </h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- Project Card 1 -->
+        <div
+          class="bg-gray-800 rounded-lg shadow-md p-5 flex flex-col md:flex-row items-start"
+        >
+          <img
+            src="UniversitySeal240px.png"
+            alt="Rise System"
+            class="w-[150px] h-auto mb-4 md:mb-0 md:mr-5 rounded-md"
+          />
+          <div>
+            <h3 class="text-xl font-bold mb-2 text-white">Rise System</h3>
+            <div class="flex space-x-2 mb-3">
+              <button class="bg-blue-500 text-white px-2 py-1 rounded-md">
+                Laravel
+              </button>
+              <button class="bg-green-500 text-white px-2 py-1 rounded-md">
+                React
+              </button>
+              <button class="bg-yellow-500 text-white px-2 py-1 rounded-md">
+                Inertia.js
+              </button>
+              <button class="bg-purple-500 text-white px-2 py-1 rounded-md">
+                MS SQL
+              </button>
+            </div>
+            <ul class="text-gray-300 list-disc pl-5">
+              <li>
+                Enhances employee skills through a development and training
+                program.
+              </li>
+              <li>
+                Automated email notifications keep participants informed of
+                sessions and deadlines.
+              </li>
+              <li>
+                Dashboard to track seminar attendance and participant progress
+                effectively.
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Project Card 2 -->
+        <div
+          class="bg-gray-800 rounded-lg shadow-md p-5 flex flex-col md:flex-row items-start"
+        >
+          <img
+            src="UniversitySeal240px.png"
+            alt="Law System"
+            class="w-[80%] md:w-[64%] mb-4 md:mb-0 md:mr-5 rounded-md"
+          />
+          <div>
+            <h3 class="text-xl font-bold mb-2 text-white">Law System</h3>
+            <div class="flex space-x-2 mb-3">
+              <button class="bg-blue-500 text-white px-2 py-1 rounded-md">
+                Laravel
+              </button>
+              <button class="bg-green-500 text-white px-2 py-1 rounded-md">
+                React
+              </button>
+              <button class="bg-yellow-500 text-white px-2 py-1 rounded-md">
+                Inertia.js
+              </button>
+              <button class="bg-purple-500 text-white px-2 py-1 rounded-md">
+                MS SQL
+              </button>
+            </div>
+            <ul class="text-gray-300 list-disc pl-5">
+              <li>
+                Streamlines academic records and hiring processes for law
+                students and faculty.
+              </li>
+              <li>Facilitates organized task management in legal offices.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Project Card 3 -->
+        <div
+          class="bg-gray-800 rounded-lg shadow-md p-5 flex flex-col md:flex-row items-start"
+        >
+          <img
+            src="UniversitySeal240px.png"
+            alt="Enrollment System"
+            class="w-[80%] md:w-[64%] mb-4 md:mb-0 md:mr-5 rounded-md"
+          />
+          <div>
+            <h3 class="text-xl font-bold mb-2 text-white">Enrollment System</h3>
+            <div class="flex space-x-2 mb-3">
+              <button class="bg-blue-500 text-white px-2 py-1 rounded-md">
+                Laravel
+              </button>
+              <button class="bg-green-500 text-white px-2 py-1 rounded-md">
+                React
+              </button>
+              <button class="bg-yellow-500 text-white px-2 py-1 rounded-md">
+                Inertia.js
+              </button>
+              <button class="bg-purple-500 text-white px-2 py-1 rounded-md">
+                MS SQL
+              </button>
+            </div>
+            <ul class="text-gray-300 list-disc pl-5">
+              <li>
+                Improves user experience with streamlined, automated enrollment
+                processes.
+              </li>
+              <li>
+                Boosts efficiency in registration workflows for students and
+                staff.
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Project Card 4 -->
+        <div
+          class="bg-gray-800 rounded-lg shadow-md p-5 flex flex-col md:flex-row items-start"
+        >
+          <img
+            src="UniversitySeal240px.png"
+            alt="Beadle System"
+            class="w-[80%] md:w-[64%] mb-4 md:mb-0 md:mr-5 rounded-md"
+          />
+          <div>
+            <h3 class="text-xl font-bold mb-2 text-white">Beadle System</h3>
+            <div class="flex space-x-2 mb-3">
+              <button class="bg-blue-500 text-white px-2 py-1 rounded-md">
+                Laravel
+              </button>
+              <button class="bg-green-500 text-white px-2 py-1 rounded-md">
+                React
+              </button>
+              <button class="bg-yellow-500 text-white px-2 py-1 rounded-md">
+                Inertia.js
+              </button>
+              <button class="bg-purple-500 text-white px-2 py-1 rounded-md">
+                MS SQL
+              </button>
+            </div>
+            <ul class="text-gray-300 list-disc pl-5">
+              <li>
+                Facilitates student attendance tracking across school years and
+                semesters.
+              </li>
+              <li>
+                Organizes attendance data for improved access and accuracy.
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Project Card 5 -->
+        <div
+          class="bg-gray-800 rounded-lg shadow-md p-5 flex flex-col md:flex-row items-start"
+        >
+          <img
+            src="UniversitySeal240px.png"
+            alt="OnePass System"
+            class="w-[80%] md:w-[64%] mb-4 md:mb-0 md:mr-5 rounded-md"
+          />
+          <div>
+            <h3 class="text-xl font-bold mb-2 text-white">OnePass System</h3>
+            <div class="flex space-x-2 mb-3">
+              <button class="bg-blue-500 text-white px-2 py-1 rounded-md">
+                Laravel
+              </button>
+              <button class="bg-green-500 text-white px-2 py-1 rounded-md">
+                React
+              </button>
+              <button class="bg-yellow-500 text-white px-2 py-1 rounded-md">
+                Inertia.js
+              </button>
+              <button class="bg-purple-500 text-white px-2 py-1 rounded-md">
+                MS SQL
+              </button>
+            </div>
+            <ul class="text-gray-300 list-disc pl-5">
+              <li>
+                Streamlines user account management through Active Directory
+                LDAP.
+              </li>
+              <li>
+                Improves operational efficiency by accurately managing user
+                account statuses.
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Project Card 6 -->
+        <div
+          class="bg-gray-800 rounded-lg shadow-md p-5 flex flex-col md:flex-row items-start"
+        >
+          <img
+            src="UniversitySeal240px.png"
+            alt="Payment System"
+            class="w-[80%] md:w-[64%] mb-4 md:mb-0 md:mr-5 rounded-md"
+          />
+          <div>
+            <h3 class="text-xl font-bold mb-2 text-white">Payment System</h3>
+            <div class="flex space-x-2 mb-3">
+              <button class="bg-blue-500 text-white px-2 py-1 rounded-md">
+                Laravel
+              </button>
+              <button class="bg-green-500 text-white px-2 py-1 rounded-md">
+                React
+              </button>
+              <button class="bg-yellow-500 text-white px-2 py-1 rounded-md">
+                Inertia.js
+              </button>
+              <button class="bg-purple-500 text-white px-2 py-1 rounded-md">
+                MS SQL
+              </button>
+            </div>
+            <ul class="text-gray-300 list-disc pl-5">
+              <li>
+                Provides a secure online banking payment solution for university
+                transactions.
+              </li>
+              <li>
+                Ensures reliability and security in all financial operations.
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Project Card 7 -->
+        <div
+          class="bg-gray-800 rounded-lg shadow-md p-5 flex flex-col md:flex-row items-start"
+        >
+          <img
+            src="UniversitySeal240px.png"
+            alt="Career System"
+            class="w-[80%] md:w-[64%] mb-4 md:mb-0 md:mr-5 rounded-md"
+          />
+          <div>
+            <h3 class="text-xl font-bold mb-2 text-white">Career System</h3>
+            <div class="flex space-x-2 mb-3">
+              <button class="bg-blue-500 text-white px-2 py-1 rounded-md">
+                Laravel
+              </button>
+              <button class="bg-green-500 text-white px-2 py-1 rounded-md">
+                React
+              </button>
+              <button class="bg-yellow-500 text-white px-2 py-1 rounded-md">
+                Inertia.js
+              </button>
+              <button class="bg-purple-500 text-white px-2 py-1 rounded-md">
+                MS SQL
+              </button>
+            </div>
+            <ul class="text-gray-300 list-disc pl-5">
+              <li>Streamlines recruitment and hiring processes.</li>
+              <li>
+                Tracks submitted documents and schedules interviews efficiently.
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Project Card 8 -->
+        <div
+          class="bg-gray-800 rounded-lg shadow-md p-5 flex flex-col md:flex-row items-start"
+        >
+          <img
+            src="UniversitySeal240px.png"
+            alt="Booking System"
+            class="w-[80%] md:w-[64%] mb-4 md:mb-0 md:mr-5 rounded-md"
+          />
+          <div>
+            <h3 class="text-xl font-bold mb-2 text-white">Booking System</h3>
+            <div class="flex space-x-2 mb-3">
+              <button class="bg-blue-500 text-white px-2 py-1 rounded-md">
+                Laravel
+              </button>
+              <button class="bg-green-500 text-white px-2 py-1 rounded-md">
+                React
+              </button>
+              <button class="bg-yellow-500 text-white px-2 py-1 rounded-md">
+                Inertia.js
+              </button>
+              <button class="bg-purple-500 text-white px-2 py-1 rounded-md">
+                MS SQL
+              </button>
+            </div>
+            <ul class="text-gray-300 list-disc pl-5">
+              <li>
+                Allows easy reservation for university facilities across
+                campuses.
+              </li>
+              <li>
+                Ensures resource availability and reservation management for
+                staff and students.
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Project Card 9 -->
+        <div
+          class="bg-gray-800 rounded-lg shadow-md p-5 flex flex-col md:flex-row items-start"
+        >
+          <img
+            src="UniversitySeal240px.png"
+            alt="Office Management System"
+            class="w-[80%] md:w-[64%] mb-4 md:mb-0 md:mr-5 rounded-md"
+          />
+          <div>
+            <h3 class="text-xl font-bold mb-2 text-white">
+              Office Management System
+            </h3>
+            <div class="flex space-x-2 mb-3">
+              <button class="bg-blue-500 text-white px-2 py-1 rounded-md">
+                Laravel
+              </button>
+              <button class="bg-green-500 text-white px-2 py-1 rounded-md">
+                React
+              </button>
+              <button class="bg-yellow-500 text-white px-2 py-1 rounded-md">
+                Inertia.js
+              </button>
+              <button class="bg-purple-500 text-white px-2 py-1 rounded-md">
+                MS SQL
+              </button>
+            </div>
+            <ul class="text-gray-300 list-disc pl-5">
+              <li>
+                Improves office operations by transitioning from paper-based to
+                digital workflows.
+              </li>
+              <li>
+                Enhances communication and task efficiency across departments.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      function toggleDescription(id, btn) {
+        const desc = document.getElementById(id);
+        desc.classList.toggle("hidden");
+        btn.innerText = desc.classList.contains("hidden")
+          ? "Read More"
+          : "Read Less";
+      }
+    </script>
+
+    <script>
+      function toggleDescription(descriptionId, link) {
+        const description = document.getElementById(descriptionId);
+        const isVisible = !description.classList.contains("hidden");
+
+        if (isVisible) {
+          description.classList.add("hidden");
+          link.textContent = "Read More";
+        } else {
+          description.classList.remove("hidden");
+          link.textContent = "Read Less";
+        }
+      }
+    </script>
+
+    <section id="contact" class="p-10 bg-gray-900">
+      <h2 class="text-3xl font-bold text-center mb-8">Contact Me</h2>
+
+      <div class="max-w-md mx-auto bg-gray-800 p-8 rounded-lg shadow-md">
+        <p class="text-gray-200 text-center">
+          For any inquiries, feel free to reach out via email at
+          <a
+            href="mailto:adriankimdrequillo@gmail.com"
+            class="text-blue-400 hover:underline"
+          >
+            adriankimdrequillo@gmail.com </a
+          >.
+        </p>
+      </div>
+    </section>
+
+    <footer class="bg-gray-800 text-gray-400 text-center py-4">
+      <p>&copy; 2024 Adrian Kim D. Requillo. All rights reserved.</p>
+    </footer>
+  </body>
+
+  <script>
+    document.getElementById("experience-link").addEventListener("click", function (event) {
+      event.preventDefault(); 
+  
+      const passkey = prompt("Enter the passkey:");
+      
+      if (passkey === "072689") {
+        window.location.href = "valentines.html";
+      } else {
+        alert("Incorrect passkey. Please try again.");
+      }
+    });
+  </script>
+</html>
