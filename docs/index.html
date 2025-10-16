@@ -1,223 +1,763 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Adrian Kim D. Requillo - Portfolio</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Adrian Kim D. Requillo | Fullstack Developer & System Architect</title>
+    
+    <!-- Link to Inter font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- CSS Variables for Theme Management (Light and Professional) --- */
+        :root {
+            --color-primary: #f4f4f5;       /* Main Background (Very Light Gray/Zinc 100) */
+            --color-primary-light: #ffffff; /* Lighter Card/Box Background (White) */
+            --color-card: #ffffff;          /* Primary Card/Block Background (White) */
+            --color-accent: #2563eb;        /* Primary Accent: Strong Professional Blue */
+            --color-highlight: #059669;     /* Secondary Highlight: Strong Emerald Green */
+            --color-text: #18181b;          /* Main Text Color (Near Black/Zinc 900) */
+            --color-secondary-gray: #a1a1aa; /* Subtle Borders & Secondary Text (Zinc 400) */
+            --shadow-dark: 0 2px 4px rgba(0, 0, 0, 0.08); /* Soft Shadow */
+            --shadow-xl-dark: 0 10px 15px rgba(0, 0, 0, 0.1); /* Slightly stronger shadow */
+            --shadow-glow: 0 0 15px rgba(37, 99, 235, 0.2); /* Soft blue glow for hover */
+            --card-border-radius: 0.75rem;
+            
+            /* New variable for smaller font size in summary */
+            --summary-font-size: 0.9375rem; /* ~15px, slightly smaller than 16px */
+        }
 
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #f9f9f9;
-      color: #333;
-      line-height: 1.6;
-    }
+        /* --- Global Resets and Base Styles --- */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-    header {
-      background-color: #fff;
-      padding: 1rem 2rem;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            background-color: var(--color-primary);
+            color: var(--color-text);
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            min-height: 100vh;
+        }
 
-    .navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
+        /* --- Animations --- */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateX(-10px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
 
-    .navbar h1 {
-      font-size: 1.5rem;
-      color: #444;
-    }
+        .card-animate {
+            opacity: 0;
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+        .skill-item {
+            opacity: 0;
+            animation: slideIn 0.4s ease-out forwards;
+        }
 
-    .navbar ul {
-      display: flex;
-      list-style: none;
-    }
+        /* --- Layout & Container --- */
+        .main-container {
+            max-width: 1440px; 
+            margin: 0 auto;
+            padding: 0 1.5rem; 
+            padding-bottom: 5rem;
+        }
 
-    .navbar ul li {
-      margin-left: 20px;
-    }
+        /* --- Main Content Grid --- */
+        .content-grid {
+            display: grid;
+            gap: 3rem;
+        }
+        @media (min-width: 1280px) { 
+            .content-grid {
+                grid-template-columns: 1fr 2fr; 
+                margin-top: 2rem; 
+            }
+        }
 
-    .navbar ul li a {
-      text-decoration: none;
-      color: #555;
-      font-weight: 500;
-    }
+        /* --- Header (Navigation) --- */
+        .portfolio-header {
+            background-color: var(--color-card);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            border-bottom: 2px solid rgba(37, 99, 235, 0.3); 
+            padding: 0.75rem 0;
+        }
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 1.75rem;
+            font-weight: 900;
+            color: var(--color-highlight); 
+            letter-spacing: 0.08em;
+            transition: color 0.3s;
+        }
+        .logo:hover {
+            color: var(--color-accent);
+        }
+        .nav-list {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        .nav-link {
+            color: var(--color-text);
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.875rem;
+            transition: color 0.3s, border-bottom 0.3s;
+        }
+        .nav-link:hover {
+            color: var(--color-accent);
+            border-bottom: 2px solid var(--color-accent);
+            padding-bottom: 2px;
+        }
 
-    .navbar ul li a:hover {
-      color: #000;
-    }
+        /* --- Section Titles --- */
+        .section-title {
+            font-size: 1.875rem; 
+            font-weight: 800;
+            margin-bottom: 2rem;
+            color: var(--color-text);
+            padding-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            border-bottom: 2px solid var(--color-secondary-gray);
+        }
+        .section-title span {
+            color: var(--color-accent);
+            margin-right: 0.75rem;
+        }
+        
+        /* --- Hero Section --- */
+        .hero-section {
+            padding: 4rem 0 2rem; 
+            text-align: center;
+            overflow: hidden;
+        }
+        .initial-icon {
+            display: inline-flex;
+            width: 5rem; 
+            height: 5rem;
+            border-radius: 50%;
+            background-color: var(--color-primary-light);
+            margin-bottom: 1rem;
+            border: 2px solid var(--color-highlight); 
+            box-shadow: 0 0 10px rgba(5, 150, 105, 0.4); 
+            align-items: center;
+            justify-content: center;
+        }
+        .initial-icon span {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: var(--color-highlight);
+        }
+        .hero-title {
+            font-size: 3rem;
+            font-weight: 900;
+            color: var(--color-text);
+            line-height: 1.2;
+        }
+        @media (min-width: 640px) {
+            .hero-title { font-size: 4rem; }
+        }
+        .hero-subtitle {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--color-accent);
+            margin-bottom: 2rem;
+            letter-spacing: 0.05em;
+        }
+        
+        /* --- Summary Card & Image Layout --- */
+        .summary-title {
+            font-size: 1.875rem; 
+            font-weight: 800;
+            color: var(--color-text);
+            padding-bottom: 0.5rem;
+            margin-top: 3rem;
+            display: flex;
+            align-items: center;
+            border-bottom: 2px solid var(--color-secondary-gray);
+        }
+        .summary-title span {
+            color: var(--color-highlight);
+            margin-right: 0.75rem;
+        }
+        .summary-box {
+            padding: 2rem;
+            background-color: var(--color-card);
+            border-radius: var(--card-border-radius);
+            box-shadow: var(--shadow-xl-dark);
+            border: 1px solid rgba(37, 99, 235, 0.2); 
+            text-align: left;
+            margin-top: 2rem;
+            width: 100%; 
+            display: flex; 
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        
+        @media (min-width: 768px) {
+            .summary-box {
+                flex-direction: row; 
+                align-items: flex-start;
+            }
+        }
+        
+        .profile-image-container {
+            flex-shrink: 0; 
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background-color: var(--color-primary); 
+            border: 4px solid var(--color-highlight);
+            box-shadow: var(--shadow-dark);
+            overflow: hidden;
+            margin: 0 auto; 
+        }
+        
+        /* NEW: Style for the image inside the container to ensure it covers the circle */
+        .profile-image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ensures image covers the area, cropping if necessary */
+            display: block; /* Removes any extra spacing */
+        }
 
-    .hero {
-      padding: 4rem 2rem;
-      text-align: center;
-      background-color: #eef1f4;
-    }
+        @media (min-width: 768px) {
+            .profile-image-container {
+                margin: 0; 
+                margin-right: 2rem; 
+            }
+        }
+        
+        .summary-text-content {
+            flex-grow: 1; 
+        }
 
-    .hero h2 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-    }
+        .summary-content {
+            font-size: var(--summary-font-size); 
+            color: var(--color-text);
+            line-height: 1.7;
+        }
+        .summary-content strong {
+            color: var(--color-highlight);
+            font-size: 1rem; 
+            display: inline;
+            text-transform: none; 
+        }
+        
+        /* --- Skills Section --- */
+        .skills-container {
+            padding: 1.5rem 0;
+        }
+        .skills-grid {
+            display: grid;
+            gap: 1.5rem;
+        }
+        .skill-box {
+            padding: 1rem;
+            background-color: var(--color-primary-light); 
+            border-radius: var(--card-border-radius);
+            box-shadow: var(--shadow-dark);
+            border-left: 4px solid var(--color-accent);
+            transition: all 0.3s;
+        }
+        .skill-box:hover {
+            box-shadow: var(--shadow-glow);
+            transform: translateY(-2px);
+            border-left: 4px solid var(--color-highlight);
+        }
+        .skill-category {
+            font-size: 1rem; 
+            font-weight: 700;
+            color: var(--color-highlight); 
+            margin-bottom: 0.75rem;
+            padding-bottom: 0.25rem;
+            border-bottom: 1px dotted rgba(0, 0, 0, 0.1);
+        }
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        .skill-tag {
+            padding: 0.15rem 0.6rem;
+            font-size: 0.75rem;
+            font-weight: 500;
+            border-radius: 4px;
+            background-color: rgba(37, 99, 235, 0.08); 
+            color: var(--color-accent);
+            border: 1px solid rgba(37, 99, 235, 0.3);
+        }
+        @media (min-width: 1280px) {
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        @media (min-width: 768px) and (max-width: 1279px) { 
+            .skills-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
 
-    .hero p {
-      font-size: 1.1rem;
-      color: #555;
-      max-width: 800px;
-      margin: 0 auto 2rem;
-    }
 
-    .contact-links a {
-      margin: 0 10px;
-      text-decoration: none;
-      color: #444;
-      font-weight: bold;
-    }
+        /* --- Projects Section --- */
+        .projects-container {
+            padding: 1.5rem 0;
+        }
+        .projects-list {
+            display: flex;
+            flex-direction: column;
+            gap: 2.5rem;
+        }
+        .project-card {
+            padding: 1.5rem;
+            background-color: var(--color-card);
+            border-radius: var(--card-border-radius);
+            box-shadow: var(--shadow-xl-dark);
+            border: 1px solid var(--color-secondary-gray);
+            transition: all 0.3s;
+        }
+        .project-card:hover {
+            border-color: var(--color-accent); 
+            box-shadow: 0 0 25px rgba(37, 99, 235, 0.3); 
+            transform: scale(1.005);
+        }
+        .project-title {
+            display: flex;
+            align-items: center;
+            font-size: 1.375rem; 
+            font-weight: 700;
+            color: var(--color-text);
+            margin-bottom: 0.75rem;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            padding-bottom: 0.5rem;
+        }
+        .project-icon {
+            min-width: 1.25rem;
+            height: 1.25rem;
+            margin-right: 0.75rem;
+            color: var(--color-accent); 
+        }
+        .project-description {
+            color: var(--color-text); 
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        .impact-box {
+            padding: 0.75rem 1rem;
+            background-color: var(--color-primary); 
+            border-radius: 0.5rem;
+            border-left: 4px solid var(--color-highlight);
+            margin-bottom: 1.25rem;
+            box-shadow: var(--shadow-dark);
+        }
+        .impact-box strong {
+            color: var(--color-highlight); 
+            text-transform: uppercase;
+            font-size: 0.75rem; 
+            display: block;
+            margin-bottom: 0.25rem;
+            letter-spacing: 0.08em;
+        }
+        .impact-box span {
+            color: var(--color-text);
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+        .tech-list {
+            margin-top: 0.5rem;
+        }
+        .tech-list strong {
+            color: var(--color-secondary-gray);
+            font-size: 0.75rem; 
+            display: block;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+        }
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+        }
+        .tech-tag {
+            padding: 0.1rem 0.6rem;
+            font-size: 0.75rem;
+            font-weight: 400;
+            border-radius: 9999px;
+            background-color: rgba(5, 150, 105, 0.1); 
+            color: var(--color-highlight); 
+            border: 1px solid rgba(5, 150, 105, 0.4);
+        }
 
-    .section {
-      padding: 2rem;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
+        /* --- Contact/Education Section --- */
+        .contact-section {
+            padding-top: 4rem;
+            border-top: 2px solid var(--color-secondary-gray);
+            margin-top: 4rem;
+        }
+        .contact-grid {
+            display: grid;
+            gap: 2rem;
+        }
+        @media (min-width: 768px) {
+            .contact-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        }
+        .contact-box {
+            padding: 1.5rem;
+            background-color: var(--color-card);
+            border-radius: var(--card-border-radius);
+            box-shadow: var(--shadow-dark);
+            border: 1px solid rgba(5, 150, 105, 0.2); 
+        }
+        .box-title {
+            font-size: 1.25rem; 
+            font-weight: 700;
+            color: var(--color-text);
+            margin-bottom: 1rem;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            padding-bottom: 0.5rem;
+        }
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            font-weight: 400;
+            color: var(--color-text);
+            font-size: 1rem;
+        }
+        .contact-details a {
+            color: var(--color-highlight);
+            font-weight: 500;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .contact-details a:hover {
+            text-decoration: underline;
+            color: var(--color-accent);
+        }
+        
+        /* Education Card */
+        .education-card {
+            padding: 1rem;
+            background-color: var(--color-primary);
+            border-radius: 0.5rem;
+            border-left: 4px solid var(--color-accent); 
+            box-shadow: var(--shadow-dark);
+        }
+        .education-card h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--color-text);
+        }
+        .education-card p {
+            color: var(--color-secondary-gray); 
+            font-size: 0.875rem;
+        }
+        .education-card strong {
+            color: var(--color-accent);
+            font-weight: 500;
+        }
 
-    .section h3 {
-      font-size: 1.8rem;
-      margin-bottom: 1rem;
-      color: #333;
-    }
-
-    .card-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.5rem;
-    }
-
-    .card {
-      background-color: #fff;
-      border-radius: 12px;
-      padding: 1.5rem;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-      transition: transform 0.3s;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-    }
-
-    .card h4 {
-      margin-bottom: 0.5rem;
-      color: #222;
-    }
-
-    .skills-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-      margin-top: 1rem;
-    }
-
-    .skill {
-      background-color: #e4e4e4;
-      padding: 0.5rem 1rem;
-      border-radius: 20px;
-      font-size: 0.95rem;
-    }
-
-    footer {
-      background-color: #f0f0f0;
-      padding: 1rem;
-      text-align: center;
-      font-size: 0.9rem;
-      margin-top: 2rem;
-      color: #666;
-    }
-
-    @media (max-width: 600px) {
-      .navbar ul {
-        flex-direction: column;
-        gap: 10px;
-      }
-    }
-  </style>
+        /* --- Footer --- */
+        .portfolio-footer {
+            background-color: var(--color-card);
+            color: var(--color-secondary-gray); 
+            padding: 1rem 0;
+            text-align: center;
+            font-size: 0.75rem;
+            border-top: 1px solid var(--color-secondary-gray);
+        }
+    </style>
 </head>
-<body>
+<body class="antialiased">
 
-  <header>
-    <div class="navbar">
-      <h1>Adrian Kim D. Requillo</h1>
-      <ul>
-        <li><a href="#systems">Systems</a></li>
-        <li><a href="#skills">Skills</a></li>
-      </ul>
-    </div>
-  </header>
-
-  <section class="hero">
-    <div class="hero-content">
-      <div class="hero-image">
-        <img src="photoop.jfif" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover;" alt="Adrian Kim D. Requillo">
-
-      </div>
-      <div class="hero-text">
-        <h2>Adrian Kim D. Requillo</h2>
-        <p>Fullstack Web & Software Developer | BSIT Graduate | Pursuing Master's of Science in Information Technology</p>
-        <div class="contact-links" id="contact">
-          <a href="mailto:adriankimdrequillo@gmail.com?subject=Portfolio Inquiry&body=">Email</a>
-          <a href="https://github.com/Strawpple" target="_blank">GitHub</a>
-          <a href="https://www.linkedin.com/in/adrian-kim-d-requillo-982a18156/" target="_blank">LinkedIn</a>
+    <!-- Header / Sticky Nav -->
+    <header class="portfolio-header">
+        <div class="main-container header-content">
+            <a href="#" class="logo">AKDR</a>
+            <nav>
+                <ul class="nav-list">
+                    <li><a href="#summary-content-block" class="nav-link">Summary</a></li>
+                    <li><a href="#projects" class="nav-link">Systems</a></li>
+                    <li><a href="#skills" class="nav-link">Expertise</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
         </div>
-      </div>
-    </div>
-  </section>
-  
-  
-  <section class="section" id="systems">
-    <h3>Systems Built</h3>
-    <div class="card-grid">
-      <div class="card"><h4>Enrollment System</h4><p>End-to-end enrollment platform for undergraduate, graduate, and law programs.</p></div>
-      <div class="card"><h4>Centralized Management Hub</h4><p>Manages access for key offices like HR and Admissions with role-based controls.</p></div>
-      <div class="card"><h4>Booking Management System</h4><p>Room, facility, and event booking with approval workflows.</p></div>
-      <div class="card"><h4>LDAP Active Directory</h4><p>Automated creation of directory accounts and credentials via API and backend integration.</p></div>
-      <div class="card"><h4>Online Payment System</h4><p>Secure online payment gateway with real-time ledger updates.</p></div>
-      <div class="card"><h4>Beadle Management System</h4><p>For managing class beadles and reporting academic attendance.</p></div>
-      <div class="card"><h4>Law School Management System</h4><p>Custom law school academic and administrative system.</p></div>
-      <div class="card"><h4>RFID Attendance System</h4><p>Integrated API for attendance logging via RFID hardware.</p></div>
-      <div class="card"><h4>Seminar QR Code Attendance</h4><p>QR code-based attendance tracking for HR training events.</p></div>
-      <div class="card"><h4>Employee Development Platform</h4><p>Training and evaluation system for employee growth and certification (Rise).</p></div>
-    </div>
-  </section>
+    </header>
 
-  <section class="section" id="skills">
-    <h3>Skills & Technologies</h3>
-    <div class="skills-list">
-      <span class="skill">Fullstack Development</span>
-      <span class="skill">Laravel</span>
-      <span class="skill">React JS</span>
-      <span class="skill">Inertia.js</span>
-      <span class="skill">Database Management</span>
-      <span class="skill">RESTful APIs</span>
-      <span class="skill">Active Directory (LDAP)</span>
-      <span class="skill">Automation</span>
-      <span class="skill">MSSQL / MySQL</span>
-      <span class="skill">Git / GitHub</span>
-      <span class="skill">System Architecture</span>
-      <span class="skill">Secure Deployment</span>
-    </div>
-  </section>
+    <main class="main-container">
 
-  <footer>
-    &copy; 2025 Adrian Kim D. Requillo. All rights reserved.
-  </footer>
+        <!-- Hero Section (Name and Title) -->
+        <section class="hero-section" id="hero">
+            <div style="max-width: 900px; margin: 0 auto;">
+                <h1 class="hero-title">
+                    ADRIAN KIM D. REQUILLO
+                </h1>
+                <p class="hero-subtitle">
+                    Fullstack Developer & System Architect
+                </p>
+            </div>
+        </section>
+
+        <!-- Professional Summary (Image and Text Layout) -->
+        <section id="summary-content-block">
+            <h2 class="summary-title card-animate" style="animation-delay: 0.1s;">
+                <span>💡</span> Professional Summary
+            </h2>
+            <div class="summary-box card-animate" style="animation-delay: 0.2s;">
+                
+                <!-- CORRECTED: Placeholder Image using a working URL -->
+                <div class="profile-image-container">
+                    
+                    <img src="photoop.jfif" 
+                         alt="Adrian Kim D. Requillo Profile Photo" 
+                         onerror="this.onerror=null; this.src='https://placehold.co/150x150/d1d5db/4b5563/png?text=Profile+Fallback';"
+                    >
+                </div>
+                
+                <!-- Text Content -->
+                <div class="summary-text-content">
+                    <p class="summary-content">
+                        <!-- Text will be injected here by JS -->
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Content Area: Skills (Left Column on Desktop) and Projects (Right Column on Desktop) -->
+        <div class="content-grid">
+            
+            <!-- Skills Section - Technical Expertise -->
+            <section id="skills" class="skills-container">
+                <h2 class="section-title">
+                    <span>⚙️</span> Technical Expertise
+                </h2>
+                <div class="skills-grid" id="skills-container-inner">
+                    <!-- Skills categories will be dynamically injected here -->
+                </div>
+            </section>
+            
+            <!-- Projects/Deliverables Section - Achievements -->
+            <section id="projects" class="projects-container">
+                <h2 class="section-title">
+                    <span>🚀</span> Key Systems & Impact
+                </h2>
+                <div class="projects-list" id="projects-container-inner">
+                    <!-- Project blocks will be dynamically injected here -->
+                </div>
+            </section>
+        </div>
+
+        <!-- Contact & Education Section (Full Width) -->
+        <section id="contact" class="contact-section">
+            <h2 class="section-title" style="border: none;">
+                <span>📬</span> Background & Connect
+            </h2>
+            <div class="contact-grid">
+                <!-- Contact Info -->
+                <div class="contact-box">
+                    <h3 class="box-title">Get In Touch</h3>
+                    <div class="contact-details">
+                         <p>📧 Email: <a href="mailto:adriankimdrequillo@gmail.com">adriankimdrequillo@gmail.com</a></p>
+                         <p>💻 GitHub: <a href="https://github.com/Strawpple" target="_blank">Strawpple (View Code)</a></p>
+                         <p>🔗 LinkedIn: <a href="https://www.linkedin.com/in/adrian-kim-d-requillo-982a18156/" target="_blank">Professional Profile</a></p>
+                    </div>
+                </div>
+                
+                <!-- Education -->
+                <div class="contact-box">
+                    <h3 class="box-title">Academic Background</h3>
+                    <div id="education-container" class="contact-details" style="gap: 1rem;">
+                         <!-- Education items will be dynamically injected here -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="portfolio-footer">
+        <p>Architected for Impact &copy; 2025 Adrian Kim D. Requillo. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // --- DATA STRUCTURE ---
+        
+        const summaryContent = `Highly effective and results-driven Software Engineer with <strong style="color: var(--color-highlight);">2+ years of full-cycle system ownership</strong>. I bridge the gap between business needs and technical reality, covering everything from <strong style="color: var(--color-accent);">stakeholder consultation, process analysis, and algorithm design</strong> to robust application development (Laravel, React, Inertia.js) and secure deployment on both <strong style="color: var(--color-highlight);">Linux (Hostinger) and IIS servers</strong>. Proven expertise in complex systems integration (LDAP, RFID) and providing external API support to mobile development teams.`;
+        
+        const profileData = {
+            name: "ADRIAN KIM D. REQUILLO",
+            title: "Fullstack Developer & System Architect", 
+            
+            skills: [
+                { category: "Core Development", items: ["Laravel", "React JS", "Inertia.js", "Modern JavaScript", "C# (for APIs/Interfaces)", "Flutter"] },
+                { category: "Data & Architecture", items: ["System Architecture", "MSSQL / MySQL", "Database Design & Optimization", "RESTful APIs", "Git / GitHub"] },
+                { category: "Integration & Deployment", items: ["Active Directory (LDAP)", "IIS Server Deployment", "Linux (Hostinger) Deployment", "Automation", "Secure Deployment"] },
+            ],
+            
+            projects: [
+                {
+                    title: "End-to-End Enrollment Platform System",
+                    description: "Pioneered the complete lifecycle of the primary enrollment platform for undergraduate, graduate, and law programs, designed for high-volume, secure transaction integrity.",
+                    impact: "Centralized all application and student data, providing a single source of truth for administrative offices and eliminating legacy manual data entry bottlenecks.",
+                    tech: ["Laravel", "Full-Cycle Design", "High-Volume DB", "System Architecture"]
+                },
+                {
+                    title: "Automated LDAP Active Directory Integration",
+                    description: "Architected a Laravel API to fully automate the creation and credentialing of Active Directory (LDAP) accounts for new enrollees and personnel.",
+                    impact: "Achieved **100% elimination of manual account provisioning during enrollment**, drastically enhancing onboarding security, speed, and efficiency.",
+                    tech: ["LDAP API", "Automation", "Security", "RESTful API Design"]
+                },
+                {
+                    title: "Employee Development & Compliance Platform (Rise)",
+                    description: "Developed a tailored system for **NTP employees** for seminar tracking, featuring automated pre-seminar notifications, QR code attendance, and post-seminar evaluation forms.",
+                    impact: "Digitized the Human Development process, providing verifiable certification records and ensuring adherence to HR timekeeping and career development requirements.",
+                    tech: ["Rule-Based Automation", "QR Code Logic", "HR Integration", "Evaluation Forms"]
+                },
+                {
+                    title: "RFID & C# Gate Entry System Integration",
+                    description: "Engineered the API and designed the **C# interface** deployed on physical gate entries for automated, secure student/personnel access logging.",
+                    impact: "Replaced manual logging with a reliable, instant, and tamper-proof high-volume attendance system with full control over the hardware/software interface.",
+                    tech: ["RFID Integration", "C# (.NET) Interface", "API Design", "Hardware Integration"]
+                },
+                {
+                    title: "Centralized Management Hub & RBAC",
+                    description: "Deployed the core management hub that governs system access for key institutional offices (HR, Admissions) with robust, role-based access controls.",
+                    impact: "Significantly enhanced data security and compliance by enforcing strict Role-Based Access Control (RBAC) across critical institutional resources.",
+                    tech: ["Laravel", "RBAC", "Security Protocols", "Admissions/HR Integration"]
+                },
+                {
+                    title: "Secure Online Payment Gateway Integration",
+                    description: "Developed and integrated a secure online payment gateway with real-time ledger updates and transaction reconciliation.",
+                    impact: "Improved financial efficiency by providing students with instant payment options and ensuring immediate, accurate reconciliation in the central ledger.",
+                    tech: ["API Integration", "Security", "MSSQL", "Real-Time Ledger"]
+                },
+                {
+                    title: "Library Access, Entries, & Reporting System",
+                    description: "Developed the internal system managing user entry and creating automated monthly reports and Excel exports of library usage statistics.",
+                    impact: "Provided administration with necessary monthly data for resource planning and accountability, replacing manual report generation with automated exports.",
+                    tech: ["Reporting", "Data Export", "MySQL", "Information Management"]
+                },
+                {
+                    title: "Booking Management System with Workflow",
+                    description: "Implemented a comprehensive room, facility, and event booking system with automated approval workflows and **transactional notifications**.",
+                    impact: "Streamlined facility scheduling, reducing administrative overhead and eliminating scheduling conflicts through automated, auditable approval processes.",
+                    tech: ["Laravel", "Workflow Automation", "Notifications", "Data Integrity"]
+                },
+                {
+                    title: "Custom Law School Management System",
+                    description: "Designed and implemented a tailored academic and administrative system specifically for the Law School's unique program structure and requirements.",
+                    impact: "Met specialized departmental needs with a custom solution, enhancing administrative efficiency where general systems were insufficient.",
+                    tech: ["Custom Architecture", "MySQL", "Specialized Logic"]
+                },
+                {
+                    title: "Mobile API Development & Consulting",
+                    description: "Developed and deployed robust RESTful APIs for consumption by the dedicated mobile development team (including my own Flutter app development), acting as the lead API consultant.",
+                    impact: "Ensured seamless data flow and integration between core backend systems and user-facing mobile applications, accelerating mobile feature development.",
+                    tech: ["RESTful APIs", "API Documentation", "Flutter (Mobile)", "Data Sync"]
+                }
+            ],
+            education: [
+                { degree: "Master of Science in Information Technology (M.S.I.T.)", school: "Ateneo de Davao University", status: "Currently Enrolled" },
+                { degree: "Bachelor of Science in Information Technology (B.S.I.T.)", school: "Ateneo de Davao University", status: "2023" }
+            ]
+        };
+
+        // --- DYNAMIC RENDERING FUNCTIONS ---
+
+        function initPortfolio() {
+            // This injects the professional summary text
+            document.querySelector('.summary-content').innerHTML = summaryContent;
+            
+            // These functions inject the projects, skills, and education sections
+            renderProjects();
+            renderSkills();
+            renderEducation();
+        }
+        
+        // Icon for project card (simplified: Hexagon/Structure)
+        const projectIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="project-icon"><path d="M12 2l8 4v8l-8 4-8-4V6l8-4z"/><path d="M12 18v-6l-8-4"/><path d="M12 12l8-4"/></svg>`;
+
+        function renderProjects() {
+            const container = document.getElementById('projects-container-inner');
+            container.innerHTML = profileData.projects.map((project, index) => `
+                <div class="project-card card-animate" style="animation-delay: ${0.1 * index}s;">
+                    <h4 class="project-title">
+                        ${projectIcon}
+                        ${project.title}
+                    </h4>
+                    <p class="project-description">${project.description}</p>
+                    
+                    <div class="impact-box">
+                        <strong>Key Impact & ROI</strong>
+                        <span>${project.impact}</span>
+                    </div>
+
+                    <div class="tech-list">
+                         <strong>Technologies & Focus:</strong>
+                        <div class="tech-tags">
+                            ${project.tech.map(tech => `
+                                <span class="tech-tag">
+                                    ${tech}
+                                </span>
+                            `).join('')}
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function renderSkills() {
+            const container = document.getElementById('skills-container-inner');
+            // Modified to use skills data which is already structured for the grid
+            container.innerHTML = profileData.skills.map((skill, index) => `
+                <div class="skill-item skill-box" style="animation-delay: ${0.5 + 0.1 * index}s;">
+                    <h4 class="skill-category">${skill.category}</h4>
+                    <div class="skill-tags">
+                        ${skill.items.map(item => `
+                            <span class="skill-tag">
+                                ${item}
+                            </span>
+                        `).join('')}
+                    </div>
+                </div>
+            `).join('');
+        }
+        
+        function renderEducation() {
+            const container = document.getElementById('education-container');
+            container.innerHTML = profileData.education.map((edu, index) => `
+                <div class="education-card card-animate" style="animation-delay: ${0.8 + 0.1 * index}s;">
+                    <h4>${edu.degree}</h4>
+                    <p>${edu.school} — <strong style="color: var(--color-accent);">${edu.status}</strong></p>
+                </div>
+            `).join('');
+        }
+
+        // Initialize the portfolio when the DOM is fully loaded
+        document.addEventListener('DOMContentLoaded', initPortfolio);
+    </script>
 
 </body>
 </html>
